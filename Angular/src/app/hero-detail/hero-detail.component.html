@@ -1,0 +1,18 @@
+<div *ngIf="hero">
+  <h2>{{hero.title | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <!-- <label>name:
+      <input [(ngModel)]="hero.title" placeholder="name"/>
+    </label> -->
+  </div>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="save(); taskTitle.value=''">
+    <div class="form-group">
+      <input  [(ngModel)]="hero.title" formControlName='name' #taskTitle class="form-controll w3-input" placeholder="Task name">
+    </div>
+  
+  </form>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

@@ -1,0 +1,19 @@
+<h2>My Heroes</h2>
+
+
+
+<form class="form" [formGroup]="form" (ngSubmit)="add(); taskTitle.value=''" method="POST">
+  <div class="form-group">
+    <input formControlName='name' name="title" #taskTitle class="form-controll w3-input" placeholder="Task name">
+  </div>
+</form>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}" title="Edit">
+      <span class="badge" >{{hero.id}}</span> {{hero.title}}
+    </a>
+    <button class="delete" title="Delete"
+      (click)="delete(hero)">x</button>
+  </li>
+</ul>

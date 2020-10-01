@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h1 class="text-center">TODO LIST APP</h1>
+          
+<!-- this is my form but i must full it -->
+        <form class="form" [formGroup]="form" (ngSubmit)="add(); taskTitle.value='';taskemail.value='';taskpassword.value=''">
+            <div class="form-group">
+              <input formControlName='name' name="name" #taskTitle class="form-controll w3-input" placeholder="Task name">
+            </div>
+
+            <div class="form-group">
+                <input formControlName='email' name="email" #taskemail class="form-controll w3-input" placeholder="Task email">
+              </div>
+
+              <div class="form-group">
+                <input formControlName='password' name="password" #taskpassword class="form-controll w3-input" placeholder="Task password">
+              </div>
+        
+            <input type="submit" value="Submit" class="btn btn-success btn-lg btn-block"> 
+        </form>
+
+
+  
